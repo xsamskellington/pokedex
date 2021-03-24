@@ -1,4 +1,4 @@
-import Head from 'next/head';
+import Head from 'next/Head';
 
 export default function layout({ title, children }) {
   return (
