@@ -1,15 +1,31 @@
+import { useState } from 'react';
 import Layout from '../components/layout';
 import Link from 'next/link';
 
 export default function Home({ pokemon }) {
+  const [searchValue, setSearchValue] = useState('');
+  const pokeName =
+    pokemon.filter((element) =>
+      element.name.includes(searchValue.toLocaleLowerCase())
+    ) || pokemon;
+
   return (
     <Layout>
-      <h1 className="text-4xl mb-8 text-center">First Gen Pokedex</h1>
+      <h1 className="text-4xl mb-2 text-center">First Gen Pokedex</h1>
+      <div className="flex justify-center">
+        <input
+          className="border p-4 my-2 capitalize text-lg bg-gray-200 rounded-md outline-none w-11/12 text-center"
+          type="text"
+          placeholder="which pokemon are you looking for?"
+          value={searchValue}
+          onChange={(e) => setSearchValue(e.target.value)}
+        />
+      </div>
       <ul>
-        {pokemon.map((pokeman, index) => (
+        {pokeName.map((pokeman, index) => (
           <li key={index}>
             <Link href={`/pokemon?id=${index + 1}`}>
-              <a className="border p-4 border-gray my-2 capitalize flex items-center text-lg bg-gray-200 rounded-md">
+              <a className="border p-4 my-2 capitalize flex items-center text-lg bg-gray-200 rounded-md">
                 <img
                   className="w-20 h-20 mr-3"
                   src={pokeman.image}

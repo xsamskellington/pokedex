@@ -36,7 +36,7 @@ export default function pokemon({ pokeman }) {
 
         <p className="mt-5 text-center text-sm">
           <Link href="/">
-            <a className="underline"> Home </a>
+            <a className="underline"> Back </a>
           </Link>
         </p>
       </div>
