@@ -3,7 +3,6 @@ import Layout from '../components/layout';
 import Link from 'next/link';
 
 export default function pokemon({ pokeman }) {
-  console.log(pokeman);
   return (
     <Layout title={pokeman.name}>
       <div className="font-mono">

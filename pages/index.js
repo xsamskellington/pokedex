@@ -14,7 +14,7 @@ export default function Home({ pokemon }) {
       <h1 className="text-4xl mb-2 text-center">First Gen Pokedex</h1>
       <div className="flex justify-center">
         <input
-          className="border p-4 my-2 capitalize text-lg bg-gray-200 rounded-md outline-none w-11/12 text-center"
+          className="border p-4 my-2 capitalize text-lg bg-gray-200 rounded-md outline-none w-11/12 text-center "
           type="text"
           placeholder="which pokemon are you looking for?"
           value={searchValue}
@@ -25,7 +25,7 @@ export default function Home({ pokemon }) {
         {pokeName.map((pokeman) => (
           <li key={pokeman.name}>
             <Link href={`/pokemon?id=${pokeman.pokeIndex}`}>
-              <a className="border p-4 my-2 capitalize flex items-center text-lg bg-gray-200 rounded-md hover:bg-red-200 hover:border-red-200 transform hover:scale-105">
+              <a className="border p-4 my-2 capitalize flex items-center text-lg bg-gray-200 rounded-md hover:bg-red-200 hover:border-red-200 transform hover:scale-105 ">
                 <img
                   className="w-20 h-20 mr-3"
                   src={pokeman.image}
